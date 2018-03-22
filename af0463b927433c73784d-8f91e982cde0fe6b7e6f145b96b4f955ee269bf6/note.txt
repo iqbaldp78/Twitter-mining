@@ -1,0 +1,7 @@
+python twitter_stream_download.py -q apple -d data => utk capture data to json 
+
+pake env => test_api => workon test_api
+
+
+
+https://marcobonzanini.com/2015/03/23/mining-twitter-data-with-python-part-4-rugby-and-term-co-occurrences/

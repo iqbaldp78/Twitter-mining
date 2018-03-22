@@ -1,0 +1,220 @@
+{
+  "axes": [
+    {
+      "scale": "x",
+      "type": "x"
+    },
+    {
+      "scale": "y",
+      "type": "y"
+    }
+  ],
+  "data": [
+    {
+      "name": "table",
+      "values": [
+        {
+          "col": "data",
+          "idx": "Apple",
+          "val": 10
+        },
+        {
+          "col": "data",
+          "idx": "\u2026",
+          "val": 6
+        },
+        {
+          "col": "data",
+          "idx": "\u2019",
+          "val": 5
+        },
+        {
+          "col": "data",
+          "idx": "I",
+          "val": 3
+        },
+        {
+          "col": "data",
+          "idx": "Music",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "iPhone",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "After",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "3",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "years",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "working",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "decided",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "time",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "move",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "something",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "new",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "My",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "last",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "day",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "Friday",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "https://t.co/4r",
+          "val": 2
+        }
+      ]
+    },
+    {
+      "name": "stats",
+      "source": "table",
+      "transform": [
+        {
+          "keys": [
+            "data.idx"
+          ],
+          "type": "facet"
+        },
+        {
+          "type": "stats",
+          "value": "data.val"
+        }
+      ]
+    }
+  ],
+  "height": 500,
+  "legends": [],
+  "marks": [
+    {
+      "from": {
+        "data": "table",
+        "transform": [
+          {
+            "keys": [
+              "data.col"
+            ],
+            "type": "facet"
+          },
+          {
+            "height": "data.val",
+            "point": "data.idx",
+            "type": "stack"
+          }
+        ]
+      },
+      "marks": [
+        {
+          "properties": {
+            "enter": {
+              "fill": {
+                "field": "data.col",
+                "scale": "color"
+              },
+              "width": {
+                "band": true,
+                "offset": -1,
+                "scale": "x"
+              },
+              "x": {
+                "field": "data.idx",
+                "scale": "x"
+              },
+              "y": {
+                "field": "y",
+                "scale": "y"
+              },
+              "y2": {
+                "field": "y2",
+                "scale": "y"
+              }
+            }
+          },
+          "type": "rect"
+        }
+      ],
+      "type": "group"
+    }
+  ],
+  "padding": "auto",
+  "scales": [
+    {
+      "domain": {
+        "data": "table",
+        "field": "data.idx"
+      },
+      "name": "x",
+      "range": "width",
+      "type": "ordinal",
+      "zero": false
+    },
+    {
+      "domain": {
+        "data": "stats",
+        "field": "sum"
+      },
+      "name": "y",
+      "nice": true,
+      "range": "height"
+    },
+    {
+      "domain": {
+        "data": "table",
+        "field": "data.col"
+      },
+      "name": "color",
+      "range": "category20",
+      "type": "ordinal"
+    }
+  ],
+  "width": 960
+}
